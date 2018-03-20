@@ -1,0 +1,48 @@
+Documentation:
+  Enabled: false
+
+AllCops:
+  Exclude:
+    - 'log/capistrano.log'
+    - 'vendor/**/*'
+    - 'tmp/**/*'
+    - 'config/initializers/*'
+    - 'bin/*'
+    - 'db/**/*'
+  TargetRubyVersion: 2.3
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+  EnforcedStyle: always
+
+Style/BlockComments:
+  Description: 'Do not use block comments.'
+  StyleGuide: '#no-block-comments'
+  Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - 'config/routes.rb'
+    - 'spec/**/*'
+    - 'config/environments/*'
+
+Metrics/MethodLength:
+  Exclude:
+    - 'app/helpers/*'
+
+Metrics/ClassLength:
+  Exclude:
+    - 'app/models/*'
+
+Metrics/LineLength:
+  Max: 100
+
+Style/StringLiterals:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false
+  
