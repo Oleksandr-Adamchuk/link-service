@@ -1,0 +1,19 @@
+%nav#mainNav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
+  .container
+    = link_to "Link Assistant", root_path, class: 'navbar-brand js-scroll-trigger'
+    %button.navbar-toggler{"aria-controls" => "navbarResponsive", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarResponsive", "data-toggle" => "collapse", :type => "button"}
+      %span.navbar-toggler-icon
+    #navbarResponsive.collapse.navbar-collapse
+      %%ul.navbar-nav.ml-auto
+        - if user_signed_in?
+          %li.nav-item
+            .nav-link.js-scroll-trigger
+              Welcome #{current_user.email}
+          %li.nav-item
+            = link_to "Sign out", destroy_user_session_path, class: 'nav-link js-scroll-trigger', :method => :delete
+        - else
+          %li.nav-item
+            = link_to "Sign in", new_user_session_path, class: 'nav-link js-scroll-trigger'
+          %li.nav-item
+            = link_to "Sign up", new_user_registration_path, class: 'nav-link js-scroll-trigger'
+.indent

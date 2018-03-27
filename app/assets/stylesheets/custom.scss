@@ -1,0 +1,22 @@
+header {
+  padding: 154px 0 100px;
+}
+
+@media (min-width: 992px) {
+  header {
+    padding: 156px 0 100px;
+  }
+}
+
+section {
+  padding: 150px 0;
+}
+
+#footer {
+  width: 100%;  
+  height: 50px;
+  padding: 2px;
+}
+div.indent {
+  height: 100px;
+}
