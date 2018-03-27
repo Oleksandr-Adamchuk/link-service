@@ -16,5 +16,4 @@ class User
 
   ## Rememberable
   field :remember_created_at, type: Time
-
 end
