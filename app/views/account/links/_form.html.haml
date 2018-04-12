@@ -1,0 +1,9 @@
+= simple_form_for [:account, link], url: path, html: {class: 'form form-horizontal', id: 'new_link'} do |f|
+  = f.error_notification
+  = f.input :name, label: 'Name:', placeholder: "http://example.com", required: false
+  .form-group.string.optional.link_tags
+    = f.label :tags,  'Tags: (comma separated)'
+    = f.input_field :tags, multiple: true, placeholder: "tag1, tag2, etc..", required: false
+
+  = f.input :description, as: :text, label: 'Description:' ,placeholder: "Type your description here...", required: false
+  = f.button :submit, class: 'btn btn-primary btn-lg'
