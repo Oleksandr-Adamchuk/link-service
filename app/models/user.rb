@@ -11,6 +11,7 @@ class User
   ## Database authenticatable
   field :email,              type: String, default: ""
   field :encrypted_password, type: String, default: ""
+  field :admin, type: Boolean, default: false
 
   ## Recoverable
   field :reset_password_token,   type: String
@@ -18,4 +19,8 @@ class User
 
   ## Rememberable
   field :remember_created_at, type: Time
+
+  def admin?
+    admin == true
+  end
 end
