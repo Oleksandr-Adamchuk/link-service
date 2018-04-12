@@ -1,0 +1,32 @@
+.row
+  .col-sm-8
+    %h2 Recent links
+    %table.table.table-striped
+      %thead
+        %tr
+          %th{:scope => "col"} #
+          %th{:scope => "col"} Name
+          %th{:scope => "col"} Description
+          %th{:scope => "col"} Created_at
+          %th{:scope => "col"} Tags
+      %tbody
+        - @resent_links.each.with_index(1) do |link, index|
+          %tr
+            %th{:scope => "row"}
+              = index
+            %td
+              = link_to link.name, "#{link.name}", :target => "_blank"
+            %td
+              = link.description
+            %td
+              = link.created_at.strftime("%Y-%m-%d")
+            %td
+              - if link.tags.count == 0
+                No tag founded
+              - else
+                - link.tags.each do |tag_name|
+                  = tag_name
+
+  .col-sm-4
+    %h2 Add new link
+    = render partial: 'account/links/form', locals: {path: {controller: "links", action: "create"}, link: @link}

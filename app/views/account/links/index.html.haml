@@ -1,0 +1,12 @@
+.error_message
+%button.link-button.btn
+  Edit links
+
+.tagcloud05
+  %ul
+    - @tags.each do |tag|
+      %li
+        = link_to account_link_path(tag) do
+          %span
+            = tag
+= render 'link_table', links: @links

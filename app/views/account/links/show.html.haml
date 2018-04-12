@@ -1,0 +1,26 @@
+.row
+  .col-sm-6
+
+    %h2 Links with tag '#{@tag}':
+    %table.table.table-striped
+      %thead
+        %tr
+          %th{:scope => "col"} #
+          %th{:scope => "col"} Name
+          %th{:scope => "col"} Description
+          %th{:scope => "col"} Tags
+      %tbody
+        - @links.each.with_index(1) do |link, index|
+          %tr
+            %th{:scope => "row"}
+              = index
+            %td
+              = link.name
+            %td
+              = link.description
+            %td
+              - if link.tags == nil
+                No tag founded
+              - else
+                - link.tags.each do |tag_name|
+                  = tag_name
