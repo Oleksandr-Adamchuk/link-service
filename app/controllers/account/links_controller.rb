@@ -27,8 +27,7 @@ class Account::LinksController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @link.update_attributes(allowed_params)
