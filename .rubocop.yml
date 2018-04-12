@@ -35,7 +35,7 @@ Metrics/ClassLength:
     - 'app/models/*'
 
 Metrics/LineLength:
-  Max: 100
+  Max: 110
 
 Style/StringLiterals:
   Enabled: false

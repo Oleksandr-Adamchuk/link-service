@@ -4,9 +4,12 @@ class Link
 
   belongs_to :user
 
-  field :name, type: String, default: ""
+  field :name, type: String
   field :description, type: String, default: ""
   field :tags, type: Array
+
+  validates :name, :description, presence: true
+  validates :tags, presence: true
 
   scope :recent, -> { order_by(created_at: :desc) }
 

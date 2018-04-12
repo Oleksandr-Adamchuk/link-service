@@ -1,5 +1,7 @@
 class Account::LinksController < ApplicationController
   before_action :authenticate_user!
+  before_action :fetch_links, only: %i[edit update destroy]
+  before_action :fetch_tags, only: [:create]
 
   def index
     @links = current_links
@@ -15,20 +17,20 @@ class Account::LinksController < ApplicationController
   end
 
   def create
-    @tags = Link.tag_list(params[:link][:tags])
+    fetch_tags
     @link = current_links.new(allowed_params)
     @link.update_attributes(tags: @tags.flatten)
     if @link.save
       redirect_to root_path, flash: { success: "The link has been created!" }
+    else
+      redirect_to account_dashboard_index_path, flash: { error: @link.errors.full_messages.to_sentence }
     end
   end
 
   def edit
-    @link = Link.find(params[:id])
   end
 
   def update
-    @link = Link.find(params[:id])
     if @link.update_attributes(allowed_params)
       flash[:success] = "Link was successfully updated!"
       redirect_to root_path
@@ -38,7 +40,6 @@ class Account::LinksController < ApplicationController
   end
 
   def destroy
-    @link = Link.find(params[:id])
     if @link.destroy
       respond_to_format
     else
@@ -47,6 +48,14 @@ class Account::LinksController < ApplicationController
   end
 
   private
+
+  def fetch_links
+    @link = Link.find(params[:id])
+  end
+
+  def fetch_tags
+    @tags = Link.tag_list(params[:link][:tags])
+  end
 
   def respond_to_format(&block)
     respond_to { |format| format.js(&block) }
