@@ -18,10 +18,9 @@
             = link_to "Sign up", new_user_registration_path, class: 'nav-link js-scroll-trigger'
 .indent
 - if current_user
-  %nav.navbar.navbar-expand-lg.navbar-light.bg-light#nav_menu
-    %button.navbar-toggler{"aria-controls" => "navbarNavAltMarkup", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNavAltMarkup", "data-toggle" => "collapse", :type => "button"}
-      %span.navbar-toggler-icon
-    #navbarNavAltMarkup.collapse.navbar-collapse
-      .navbar-nav
-        = link_to "Dashboard", root_path, class: "nav-item nav-link"
-        = link_to "Show all tags", account_links_path, class: 'nav-item nav-link'
+  %nav.navbar.navbar-expand.navbar-light.bg-light#nav_menu
+    %ul.navbar-nav
+      %li.nav-item
+        = link_to "Dashboard", root_path, class: "nav-link"
+      %li.nav-item
+        = link_to "Show all tags", account_links_path, class: 'nav-link'

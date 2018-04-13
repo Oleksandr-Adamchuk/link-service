@@ -18,11 +18,13 @@ section {
 }
 
 #nav_menu {
+  margin-top: 56px;
   margin-bottom: 25px;
+
 }
 
 #wrapper {
-  padding-bottom: 50px;
+  padding-bottom: 60px;
 }
 #footer {
   position: absolute;
@@ -30,11 +32,7 @@ section {
   left: 0;
   bottom: 0;
   z-index: 1030;
-  height: 50px;
-}
-
-div.indent {
-  height: 50px;
+  height: 60px;
 }
 
 #link_tags {
@@ -44,8 +42,14 @@ div.indent {
   display: none;
 }
 
-.alert-error {
+.alert-alert {
   color: red;
+  margin-top: 60px;
+  margin-bottom: -80px;
+}
+.alert {
+  color: red;
+  font-weight: bold;
 }
 
 /********** TAGS CLOUD STYLES ********/

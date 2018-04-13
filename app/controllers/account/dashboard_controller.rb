@@ -9,4 +9,10 @@ class Account::DashboardController < ApplicationController
     @resent_links = current_links.recent.limit(LIMIT_TO_SHOW)
     @resent_links.each { |link| @arr << link.tags }
   end
+
+  def links_any?
+    current_links.any?
+  end
+
+  helper_method :links_any?
 end
