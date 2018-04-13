@@ -1,3 +1,8 @@
+body {
+  position: relative;
+  min-height: 100vh;
+}
+
 header {
   padding: 154px 0 100px;
 }
@@ -16,12 +21,18 @@ section {
   margin-bottom: 25px;
 }
 
-#footer {
-  width: 100%;  
-  height: 50px;
-  margin-top: 30px;
-  padding: 2px;
+#wrapper {
+  padding-bottom: 50px;
 }
+#footer {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1030;
+  height: 50px;
+}
+
 div.indent {
   height: 50px;
 }
