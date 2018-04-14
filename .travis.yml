@@ -16,4 +16,4 @@ services:
   - mongodb
 
 before_script:
-  - cp config/mongoid.yml.example config/dmongoid.yml
+  - cp config/mongoid.yml.example config/mongoid.yml
