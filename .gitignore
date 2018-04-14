@@ -18,4 +18,5 @@
 
 .byebug_history
 
-config/mongoid.yml
+# Configs
+/config/mongoid.yml
