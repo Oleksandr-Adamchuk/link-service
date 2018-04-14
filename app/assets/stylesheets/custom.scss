@@ -24,7 +24,7 @@ section {
 }
 
 #wrapper {
-  padding-bottom: 60px;
+  padding-bottom: 120px;
 }
 #footer {
   position: absolute;
@@ -32,7 +32,6 @@ section {
   left: 0;
   bottom: 0;
   z-index: 1030;
-  height: 60px;
 }
 
 #link_tags {
@@ -47,9 +46,12 @@ section {
   margin-top: 60px;
   margin-bottom: -80px;
 }
-.alert {
+.alert-error {
   color: red;
   font-weight: bold;
+}
+button.link-button {
+  margin-bottom: 20px;
 }
 
 /********** TAGS CLOUD STYLES ********/

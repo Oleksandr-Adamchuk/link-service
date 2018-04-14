@@ -1,6 +1,5 @@
 .row
-  .col-sm-6
-
+  .col-md-8.offset-md-2
     %h2 Links with tag '#{@tag}':
     %table.table.table-striped
       %thead
@@ -15,7 +14,7 @@
             %th{:scope => "row"}
               = index
             %td
-              = link.name
+              = link_to link.name, "#{link.name}", :target => "_blank"
             %td
               = link.description
             %td

@@ -18,5 +18,4 @@ class Link
   def self.tag_list(new_value)
     new_value.map { |arr| arr.split(/,\s+/) }
   end
-
 end

@@ -1,32 +1,33 @@
-.links-form
-  .col-sm-8
-    %h2 My links
-    %table.table.table-striped
-      %thead
-        %tr
-          %th{:scope => "col"} #
-          %th{:scope => "col"} Name
-          %th{:scope => "col"} Description
-          %th{:scope => "col"} Created_at
-          %th{:scope => "col"} Tags
-          %th{:scope => "col"} Operations
-      %tbody
-        - links.each.with_index(1) do |link, index|
-          %tr{data: link.id}
-            %th{:scope => "row"}
-              = index
-            %td
-              = link_to link.name, "#{link.name}", :target => "_blank"
-            %td
-              = link.description
-            %td
-              = link.created_at.strftime("%Y-%m-%d")
-            %td
-              - if link.tags.count == 0
-                No tag founded
-              - else
-                - link.tags.each do |tag_name|
-                  = tag_name
-            %td
-              = link_to 'Edit', edit_account_link_path(link)
-              = link_to 'Destroy', account_link_path(link), method: :delete, remote:true, data: { confirm: 'Are you sure?' }
+.row
+  .col-xs-12.col-md-10
+    .links-form
+      %h2 My links
+      %table.table.table-striped
+        %thead
+          %tr
+            %th{:scope => "col"} #
+            %th{:scope => "col"} Name
+            %th{:scope => "col"} Description
+            %th{:scope => "col"} Created_at
+            %th{:scope => "col"} Tags
+            %th{:scope => "col"} Operations
+        %tbody
+          - links.each.with_index(1) do |link, index|
+            %tr{data: link.id}
+              %th{:scope => "row"}
+                = index
+              %td
+                = link_to link.name, "#{link.name}", :target => "_blank"
+              %td
+                = link.description
+              %td
+                = link.created_at.strftime("%Y-%m-%d")
+              %td
+                - if link.tags.count == 0
+                  No tag founded
+                - else
+                  - link.tags.each do |tag_name|
+                    = tag_name
+              %td
+                = link_to 'Edit', edit_account_link_path(link)
+                = link_to 'Destroy', account_link_path(link), method: :delete, remote:true, data: { confirm: 'Are you sure?' }
